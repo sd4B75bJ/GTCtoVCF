@@ -1,5 +1,5 @@
-from LocusEntry import LocusEntry
-from IlluminaBeadArrayFiles import RefStrand
+from .LocusEntry import LocusEntry
+from .IlluminaBeadArrayFiles import RefStrand
 
 class LocusEntryFactory(object):
     """

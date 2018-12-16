@@ -1,5 +1,5 @@
-from IlluminaBeadArrayFiles import BeadPoolManifest, RefStrand
-from BPMRecord import BPMRecord, IndelSourceSequence
+from .IlluminaBeadArrayFiles import BeadPoolManifest, RefStrand
+from .BPMRecord import BPMRecord, IndelSourceSequence
 
 class BPMReader(object):
     """

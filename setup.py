@@ -3,6 +3,8 @@ import subprocess
 import json
 from setuptools import setup
 
+PACKAGE_NAME = 'GTCtoVCF'
+
 here = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -32,7 +34,7 @@ def absolute_version():
 
 
 def write_version_file(version_str):
-    with open(os.path.join(here, '__version__.py'), 'w') as f:
+    with open(os.path.join(here, PACKAGE_NAME, '__version__.py'), 'w') as f:
         f.write('__version__ = {}\n'.format(json.dumps(version_str)))
 
 
@@ -40,10 +42,10 @@ package_version = absolute_version()
 write_version_file(package_version)
 
 setup(
-    name='GTCtoVCF',
+    name=PACKAGE_NAME,
     version=package_version,
-    packages=['GTCtoVCF'],
-    scripts=['gtc_to_vcf.py'],
+    packages=[PACKAGE_NAME],
+    scripts=['{}/gtc_to_vcf.py'.format(PACKAGE_NAME)],
     author='Ryan Kelley',
     url='https://github.com/Illumina/GTCtoVCF',
     author_email='rkelly@illumina.com',

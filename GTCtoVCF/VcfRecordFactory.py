@@ -1,4 +1,4 @@
-from IlluminaBeadArrayFiles import RefStrand
+from .IlluminaBeadArrayFiles import RefStrand
 from vcf.model import _Record, _Substitution
 
 def check_reference_allele(reference_base, bpm_record_group):

@@ -1,6 +1,6 @@
 from itertools import combinations_with_replacement
 from vcf.parser import _Format
-from IlluminaBeadArrayFiles import code2genotype
+from .IlluminaBeadArrayFiles import code2genotype
 
 CHANNEL_MAP = {"A": "T", "T": "A", "C": "G", "G": "C"}
 

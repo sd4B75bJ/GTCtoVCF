@@ -1,5 +1,5 @@
-from GenotypeFormat import GenotypeFormat
-from GencallFormat import GencallFormat
+from .GenotypeFormat import GenotypeFormat
+from .GencallFormat import GencallFormat
 
 class FormatFactory(object):
     """FormatFactory is responsible for determining the fields

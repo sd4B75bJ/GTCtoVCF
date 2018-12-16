@@ -8,16 +8,15 @@ import traceback
 import tempfile
 from vcf.parser import Writer, Reader
 
-from BPMReader import BPMReader, CSVManifestReader, ManifestFilter
-from LocusEntryFactory import LocusEntryFactory
-from CallFactory import CallFactory
-from ReferenceGenome import ReferenceGenome, CachedReferenceGenome
-from IlluminaBeadArrayFiles import GenotypeCalls
-from VcfRecordFactory import VcfRecordFactory
-from ReaderTemplateFactory import ReaderTemplateFactory
-from FormatFactory import FormatFactory
-
-VERSION = "1.1.1"
+from GTCtoVCF.BPMReader import BPMReader, CSVManifestReader, ManifestFilter
+from GTCtoVCF.LocusEntryFactory import LocusEntryFactory
+from GTCtoVCF.CallFactory import CallFactory
+from GTCtoVCF.ReferenceGenome import ReferenceGenome, CachedReferenceGenome
+from GTCtoVCF.IlluminaBeadArrayFiles import GenotypeCalls
+from GTCtoVCF.VcfRecordFactory import VcfRecordFactory
+from GTCtoVCF.ReaderTemplateFactory import ReaderTemplateFactory
+from GTCtoVCF.FormatFactory import FormatFactory
+from GTCtoVCF.__version__ import __version__
 
 def is_dir_writable(parent_dir):
     try:
@@ -136,7 +135,7 @@ def read_auxiliary_records(auxiliary_loci):
 
 def driver(gtc_files, manifest_reader, genome_reader, output_vcf_files, expand_identifiers, unsquash_duplicates, auxiliary_records, logger):
     format_factory = FormatFactory(gtc_files[0] is None, logger)
-    reader_template_factory = ReaderTemplateFactory(genome_reader, format_factory, "4.1", "gtc_to_vcf " + VERSION, genome_reader.get_contig_order(), logger)
+    reader_template_factory = ReaderTemplateFactory(genome_reader, format_factory, "4.1", "gtc_to_vcf " + __version__, genome_reader.get_contig_order(), logger)
     vcf_record_factory = VcfRecordFactory(format_factory, genome_reader, expand_identifiers, auxiliary_records, logger)
     locus_entries = LocusEntryFactory(vcf_record_factory, genome_reader.get_contig_order(), unsquash_duplicates, logger).create_locus_entries(manifest_reader)
 
@@ -280,7 +279,7 @@ def main():
     parser.add_argument("--auxiliary-loci", dest="auxiliary_loci", default=None, required=False, help="VCF file with auxiliary definitions of loci (optional)")
     parser.add_argument("--filter-loci", dest="filter_loci", default=None, required=False, help="File containing list of loci names to filter from input manifest (optional)")
     parser.add_argument("--disable-genome-cache", dest="disable_genome_cache", default=False, action="store_true", help="Disable caching of genome reference data")
-    parser.add_argument("--version", action="version", version='%(prog)s ' + VERSION)
+    parser.add_argument("--version", action="version", version='%(prog)s ' + __version__)
     args = parser.parse_args()
 
     args.output_vcf_path = os.path.abspath(args.output_vcf_path)
