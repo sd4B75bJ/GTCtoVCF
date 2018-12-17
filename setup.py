@@ -3,7 +3,7 @@ import subprocess
 import json
 from setuptools import setup
 
-PACKAGE_NAME = 'GTCtoVCF'
+PACKAGE_NAME = 'gtctovcf'
 
 here = os.path.dirname(os.path.abspath(__file__))
 

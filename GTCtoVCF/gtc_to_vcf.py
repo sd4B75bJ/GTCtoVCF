@@ -8,15 +8,15 @@ import traceback
 import tempfile
 from vcf.parser import Writer, Reader
 
-from GTCtoVCF.BPMReader import BPMReader, CSVManifestReader, ManifestFilter
-from GTCtoVCF.LocusEntryFactory import LocusEntryFactory
-from GTCtoVCF.CallFactory import CallFactory
-from GTCtoVCF.ReferenceGenome import ReferenceGenome, CachedReferenceGenome
-from GTCtoVCF.IlluminaBeadArrayFiles import GenotypeCalls
-from GTCtoVCF.VcfRecordFactory import VcfRecordFactory
-from GTCtoVCF.ReaderTemplateFactory import ReaderTemplateFactory
-from GTCtoVCF.FormatFactory import FormatFactory
-from GTCtoVCF.__version__ import __version__
+from gtctovcf.BPMReader import BPMReader, CSVManifestReader, ManifestFilter
+from gtctovcf.LocusEntryFactory import LocusEntryFactory
+from gtctovcf.CallFactory import CallFactory
+from gtctovcf.ReferenceGenome import ReferenceGenome, CachedReferenceGenome
+from gtctovcf.IlluminaBeadArrayFiles import GenotypeCalls
+from gtctovcf.VcfRecordFactory import VcfRecordFactory
+from gtctovcf.ReaderTemplateFactory import ReaderTemplateFactory
+from gtctovcf.FormatFactory import FormatFactory
+from gtctovcf.__version__ import __version__
 
 def is_dir_writable(parent_dir):
     try:
