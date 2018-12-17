@@ -53,7 +53,7 @@ setup(
     test_suite='test',
     install_requires=[
         'pysam==0.9.0',
-        'numpy==1.11.2',
+        'numpy>1.11.2',
         'pyvcf==0.6.8',
     ]
 )
