@@ -52,8 +52,8 @@ setup(
     description='Convert GTC file to VCF format',
     test_suite='test',
     install_requires=[
-        'pysam',
-        'numpy',
-        'pyvcf',
+        'pysam==0.9.0',
+        'numpy==1.11.2',
+        'pyvcf==0.6.8',
     ]
 )

@@ -101,18 +101,6 @@ pysam | 0.9.0
 numpy | 1.11.2
 pyvcf | 0.6.8
 
-An easy way to obtain a version of python with these dependencies available is to use "Miniconda". Miniconda is a minimal python installation along with a package manager ("conda") that can be used to install additional packages. First, obtain the 64-bit python 2.7 installer from https://conda.io/miniconda.html and install
-```bash
-bash Miniconda2-latest-Linux-x86_64.sh 
-```
-This will run the installer and ask you where you would like to install Miniconda. Then, install numpy, pyvcf, and pysam
-```bash
-conda install -c miniconda numpy=1.11.2
-conda install -c bioconda pyvcf=0.6.8
-conda install -c bioconda pysam=0.9.0
-```
-where conda is a the package manager binary located in the installation location specified in the first step. 
-
 ## License
 
 Copyright 2018 Illumina
